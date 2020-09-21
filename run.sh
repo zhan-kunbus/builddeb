@@ -8,6 +8,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 WORK='/work'
 apt-get update
+apt-get -y upgrade
 
 mkdir /tmp/deps
 cd /tmp/deps
