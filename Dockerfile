@@ -18,6 +18,7 @@ RUN apt-get update \
 	fakeroot \
 	devscripts \
 	eatmydata \
+&& apt-get -y -t stretch-backports install debhelper \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/*
 
