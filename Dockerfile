@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM debian:stretch
 
 ARG DEBIAN_FRONTEND=noninteractive
 
