@@ -8,13 +8,18 @@ export LD_LIBRARY_PATH=/usr/lib/libeatmydata
 export DEBIAN_FRONTEND=noninteractive
 
 WORK='/work'
+if [[ ! -d "$WORK/$PACKAGE" ]] ; then
+    >&2 echo "Directory '$WORK/$PACKAGE' doesn't exist."
+    exit
+fi
+
 apt-get update
 apt-get -y upgrade
 
 mkdir /tmp/deps
 cd /tmp/deps
 mk-build-deps --install --tool='apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends --yes' $WORK/$PACKAGE/debian/control
-cd $WORK/$PACKAGE
+cd "$WORK/$PACKAGE"
 uid=$(stat -c '%u' .)
 gid=$(stat -c '%g' .)
 dpkg-buildpackage -us -uc
