@@ -18,4 +18,4 @@ uid=$(stat -c '%u' .)
 gid=$(stat -c '%g' .)
 dpkg-buildpackage -us -uc
 cd ..
-chown $uid:$gid *.deb *.tar.* *.dsc *.asc
+chown $uid:$gid *.deb *.tar.* *.dsc *.asc *.buildinfo *.changes 2> /dev/null
