@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -x
+set -e
 
 export LD_PRELOAD=libeatmydata.so
 export LD_LIBRARY_PATH=/usr/lib/libeatmydata
@@ -18,4 +19,4 @@ uid=$(stat -c '%u' .)
 gid=$(stat -c '%g' .)
 dpkg-buildpackage -us -uc
 cd ..
-chown $uid:$gid *.deb *.tar.* *.dsc *.asc *.buildinfo *.changes 2> /dev/null
+chown $uid:$gid *.deb *.tar.* *.dsc *.asc *.buildinfo *.changes 2> /dev/null || true
