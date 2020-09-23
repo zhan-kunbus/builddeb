@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM raspbian-lite
 
 ARG DEBIAN_FRONTEND=noninteractive
 
