@@ -1,4 +1,4 @@
-FROM raspbian-lite
+FROM tianon/raspbian:stretch-slim
 
 ARG DEBIAN_FRONTEND=noninteractive
 
