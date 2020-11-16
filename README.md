@@ -2,4 +2,4 @@
 
 A simple docker container to build debian packages.
 
-./builddeb-raspbian-stretch.sh debian/pkg/source/dir
+./builddeb-raspbian-buster.sh debian/pkg/source/dir
